@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novare Consultoria</title>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        /* --- ESTILOS GERAIS --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Open Sans', sans-serif; color: #333; line-height: 1.6; }
+
+        /* --- CABEÇALHO --- */
+        header {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 15px 5%; background: #ffffff; box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky; top: 0; z-index: 1000;
+        }
+        .logo img { height: 60px; border-radius: 50%; border: 3px solid #16467d; }
+
+        nav ul { display: flex; list-style: none; align-items: center; }
+        nav ul li { margin: 0 12px; }
+        nav ul li a { text-decoration: none; color: #444; font-size: 14px; transition: 0.3s; }
+        nav ul li a:hover { color: #3508ff; }
+
+        .social-header { display: flex; gap: 15px; margin-left: 20px; }
+        .social-header a { color: #333; font-size: 18px; }
+
+        /* --- WHATSAPP FLUTUANTE --- */
+        .whatsapp-float {
+            position: fixed; 
+            width: 65px; 
+            height: 65px; 
+            bottom: 30px; 
+            right: 30px;
+            background-color: #25d366; 
+            color: #FFF; 
+            border-radius: 50px;
+            text-align: center; 
+            font-size: 35px; 
+            box-shadow: 2px 5px 15px rgba(0,0,0,0.3);
+            z-index: 1000; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            text-decoration: none; 
+            transition: 0.3s;
+        }
+        .whatsapp-float:hover { transform: scale(1.1); background-color: #128c7e; color: white; }
+
+        .hero {
+                height: 100vh; /* Faz a seção ocupar a altura toda da tela */
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                flex-direction: column;
+                
+                /* Imagem de fundo com um degradê escuro para o texto aparecer */
+                background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                            url('time.jpeg');
+                
+                background-size: cover;
+                background-position: center;
+                color: rgb(55, 0, 255);
+        }
+                .btn-hero {
+                    display: inline-block;    /* 1. Permite que o fundo e o espaçamento funcionem */
+                    background-color: #0e47e2; /* 2. A cor do fundo (pode usar o azul se preferir) */
+                    color: rgb(0, 0, 0);             /* 3. Cor do texto */
+                    padding: 12px 24px;       /* 4. Espaçamento interno (Cima/Baixo e Lados) */
+                    text-decoration: none;    /* 5. Remove o sublinhado roxo feio */
+                    font-weight: bold;        /* 6. Deixa o texto mais forte */
+                    border-radius: 4px;       /* 7. O "quadrado bonitinho" (0 para quinas secas) */
+                    transition: 0.3s;         /* 8. Suaviza a cor quando passar o mouse */
+                    margin-top: 20px;         /* 9. Afasta o botão da frase de cima */
+                }
+
+                /* Efeito ao passar o mouse */
+                .btn-hero:hover {
+                    background-color: #2f00ff;
+                    transform: translateY(-2px); /* Pequeno pulinho para cima */
+                }
+        .sex {
+            background-color: rgb(255, 255, 255);
+            flex-direction: column;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+
+        .sobre-empresa p { max-width: 800px; color: #555; font-size: 1.1rem; }
+
+        /* COLOQUE AQUI, NO FINAL DE TODO O CSS */
+        @media (max-width: 768px) {
+            header { 
+                flex-direction: column; 
+                padding: 15px; 
+            }
+            nav { margin-top: 15px; }
+            nav ul { 
+                flex-wrap: wrap; 
+                justify-content: center; 
+                gap: 10px; 
+            }
+            
+            .hero { 
+                min-height: 60vh; /* Ajuste da altura para não cortar a foto */
+                padding: 60px 5%; 
+                background-position: center 20%; /* Foca no rosto da galera */
+            }
+
+            .hero h1 { font-size: 1.8rem; }
+            .hero p { font-size: 1rem; }
+            
+            .social-header { margin-left: 0; margin-top: 10px; }
+        }
+
+/* Container que segura os três cards */
+.mvv {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    flex-wrap: wrap; /* Para quebrar linha no celular */
+    gap: 20px;
+    padding: 60px 5%;
+    background-color: #f8f9fa; /* Um cinza bem clarinho para destacar do branco */
+}
+
+/* Estilo de cada quadradinho (card) */
+.mvv-card {
+    flex: 1;
+    min-width: 280px; /* Largura mínima para não esmagar no celular */
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    border-top: 5px solid #16467d; /* Barrinha azul da cor da sua logo */
+}
+
+.mvv-card h3 {
+    color: #16467d;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.mvv-card p {
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Estilo da listinha de valores */
+.mvv-card ul {
+    list-style: none; /* Remove as bolinhas padrão */
+    padding: 0;
+}
+
+.mvv-card ul li {
+    background: #eef2f7;
+    margin: 5px 0;
+    padding: 5px;
+    border-radius: 5px;
+    color: #16467d;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* Ajuste para celular */
+@media (max-width: 768px) {
+    .mvv {
+        flex-direction: column;
+    }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="novare.jpg" alt="Logo">
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="time.html">EQUIPE</a></li>
+                <li><a href="quem.html">QUEM SOMOS NÓS</a></li>
+                <li><a href="servico.html">SERVIÇOS</a></li>
+
+                <div class="Social-header">
+                 <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                 <a href="https://www.instagram.com/novareconsultoria?igsh=MTNuOHc4a2wxeHc3dw=="><i class="fab fa-instagram"></i></a>
+                 </div>
+            </ul>
+         </nav>
+    </header>
+    <a href="https://wa.me/5592992430940" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <main>
+        <section class="hero">
+            <h1>Novare Consultoria</h1>
+            <p>Lutando por um Amazonas mais empreendedor</p>
+            <a href="time.html" class="btn-hero">Conheça nosso Time</a>
+        </section>
+     </main>
+<section class="mvv">
+    <div class="mvv-card">
+        <h3><i class="fas fa-bullseye"></i> Missão</h3>
+        <p>Transformar negócios com soluções estratégicas em Engenharia de Produção.</p>
+    </div>
+
+    <div class="mvv-card">
+        <h3><i class="fas fa-eye"></i> Visão</h3>
+        <p>Ser referência júnior em inovação e impacto no Amazonas.</p>
+    </div>
+
+    <div class="mvv-card">
+        <h3><i class="fas fa-heart"></i> Valores</h3>
+        <ul>
+            <li>Ética</li>
+            <li>Aprendizado</li>
+            <li>Inovação</li>
+            <li>Comprometimento</li>
+            <li>Sustentabilidade</li>
+        </ul>
+    </div>
+</section>
+</body>
+</html>

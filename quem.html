@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novare Consultoria</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        /* --- ESTILOS GERAIS --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Open Sans', sans-serif; color: #333; line-height: 1.6; background: #fdfdfd; }
+
+        /* --- CABEÇALHO --- */
+        header {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 15px 5%; background: #ffffff; box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky; top: 0; z-index: 1000;
+        }
+        .logo img { height: 60px; border-radius: 50%; border: 3px solid #16467d; }
+
+        nav ul { display: flex; list-style: none; align-items: center; }
+        nav ul li { margin: 0 12px; }
+        nav ul li a { text-decoration: none; color: #444; font-size: 14px; transition: 0.3s; font-weight: 600; }
+        nav ul li a:hover { color: #3508ff; }
+
+        .Social-header { display: flex; gap: 15px; margin-left: 20px; }
+        .Social-header a { color: #333; font-size: 18px; }
+
+        /* --- WHATSAPP --- */
+        .whatsapp-float {
+            position: fixed; width: 65px; height: 65px; bottom: 30px; right: 30px;
+            background-color: #25d366; color: #FFF; border-radius: 50px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 35px; box-shadow: 2px 5px 15px rgba(0,0,0,0.3); z-index: 1000;
+        }
+
+        /* --- SEÇÃO SOBRE --- */
+        .sobre-novare { padding: 80px 8%; background: #f5f7fa; text-align: justify; }
+        .sobre-texto { max-width: 1000px; margin: 0 auto; }
+        .sobre-texto span { font-size: 18px; color: #7a869a; font-weight: 600; display: block; }
+        .sobre-texto h2 { font-size: 42px; color: #2c3e50; margin-bottom: 30px; font-weight: 700; position: relative; }
+        .sobre-texto h2::after { content: ""; width: 60px; height: 4px; background: #1e5ba3; position: absolute; bottom: -10px; left: 0; }
+        .sobre-texto p { font-size: 16px; color: #5f6c7b; margin-bottom: 20px; line-height: 1.8; }
+
+        /* --- LINHA DO TEMPO / TIME --- */
+        .time-section { padding: 80px 8%; text-align: center; }
+        .line-orange { width: 50px; height: 4px; background: #2800da; margin: 0 auto 15px; }
+        .time-title { font-size: 32px; color: #2c3e50; margin-bottom: 40px; }
+        
+        .time-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 25px; 
+        }
+
+        .time-card {
+            background: #fff; border: 1px solid #eee; border-radius: 15px;
+            padding: 20px; text-align: center; transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .time-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .time-card h3 { font-size: 18px; color: #16467d; margin-bottom: 15px; }
+        .time-card img { width: 100%; height: 200px; object-fit: cover; border-radius: 10px; }
+
+        /* --- MISSÃO, VISÃO E VALORES --- */
+        .mvv { display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; padding: 80px 8%; background-color: #f8f9fa; }
+        .mvv-card { flex: 1; min-width: 280px; max-width: 350px; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); text-align: center; border-top: 5px solid #16467d; }
+        .mvv-card h3 { color: #16467d; margin-bottom: 15px; font-size: 1.5rem; }
+        .mvv-card ul { list-style: none; padding: 0; }
+        .mvv-card ul li { background: #eef2f7; margin: 5px 0; padding: 8px; border-radius: 5px; color: #16467d; font-weight: 600; }
+
+        @media (max-width: 768px) {
+            header { flex-direction: column; padding: 20px; }
+            nav ul { margin-top: 15px; flex-wrap: wrap; justify-content: center; }
+            .sobre-texto h2 { font-size: 32px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo"><img src="novare.jpg" alt="Logo"></div>
+        <nav>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="time.html">EQUIPE</a></li>
+                <li><a href="quem.html">QUEM SOMOS NÓS</a></li>
+                <li><a href="servico.html">SERVIÇOS</a></li>
+                <div class="Social-header">
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/novareconsultoria"><i class="fab fa-instagram"></i></a>
+                </div>
+            </ul>
+        </nav>
+    </header>
+
+    <a href="https://wa.me/5592992430940" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+    <section class="sobre-novare">
+        <div class="sobre-texto">
+            <span>Conheça a</span>
+            <h2>Novare Consultoria</h2>
+            <p>A Novare Consultoria foi fundada em 2017 por estudantes de Engenharia de Produção da Universidade do Estado do Amazonas (UEA), com o propósito de conectar o conhecimento acadêmico à prática de mercado, gerando impacto real para empresas e para a formação de seus membros.</p>
+            <p>Ainda em seu primeiro ano de atuação, a Novare alcançou um marco histórico: tornou-se a primeira empresa júnior da UEA a ser federada pela Baré Júnior. Essa conquista reforça o comprometimento e o espírito de protagonismo de seus membros.</p>
+            <p>Guiada por valores como protagonismo, excelência e aprendizado contínuo, a Novare segue formando profissionais preparados e fortalecendo o ecossistema empreendedor no Amazonas.</p>
+        </div>
+    </section>
+
+    <section class="time-section">
+        <div class="line-orange"></div>
+        <h2 class="time-title">Linha do Tempo Novare</h2>
+        <div class="time-grid">
+            <div class="time-card"><h3>Equipe 2017</h3><img src="2017.jpg" alt="2017"></div>
+            <div class="time-card"><h3>Equipe 2018</h3><img src="2018.jpg" alt="2018"></div>
+            <div class="time-card"><h3>Equipe 2019</h3><img src="2019.jpg" alt="2019"></div>
+            <div class="time-card"><h3>Equipe 2022</h3><img src="2022.jpg" alt="2022"></div>
+            <div class="time-card"><h3>Equipe 2023</h3><img src="2023.jpg" alt="2023"></div>
+            <div class="time-card"><h3>Equipe 2024/2025</h3><img src="2025.jpg" alt="2025"></div>
+            <div class="time-card"><h3>Equipe 2026</h3><img src="Time.jpeg" alt="2026"></div>
+        </div>
+    </section>
+
+    <section class="mvv">
+        <div class="mvv-card">
+            <h3><i class="fas fa-bullseye"></i> Missão</h3>
+            <p>Transformar negócios com soluções estratégicas em Engenharia de Produção.</p>
+        </div>
+        <div class="mvv-card">
+            <h3><i class="fas fa-eye"></i> Visão</h3>
+            <p>Ser referência júnior em inovação e impacto no Amazonas.</p>
+        </div>
+        <div class="mvv-card">
+            <h3><i class="fas fa-heart"></i> Valores</h3>
+            <ul>
+                <li>Ética</li>
+                <li>Aprendizado</li>
+                <li>Inovação</li>
+                <li>Comprometimento</li>
+                <li>Sustentabilidade</li>
+            </ul>
+        </div>
+    </section>
+
+</body>
+</html>

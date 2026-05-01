@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novare Consultoria</title>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        /* --- ESTILOS GERAIS --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Open Sans', sans-serif; color: #333; line-height: 1.6; }
+
+        /* --- CABEÇALHO --- */
+        header {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 15px 5%; background: #ffffff; box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky; top: 0; z-index: 1000;
+        }
+        .logo img { height: 60px; border-radius: 50%; border: 3px solid #16467d; }
+
+        nav ul { display: flex; list-style: none; align-items: center; }
+        nav ul li { margin: 0 12px; }
+        nav ul li a { text-decoration: none; color: #444; font-size: 14px; transition: 0.3s; }
+        nav ul li a:hover { color: #3508ff; }
+
+        .social-header { display: flex; gap: 15px; margin-left: 20px; }
+        .social-header a { color: #333; font-size: 18px; }
+
+        /* --- WHATSAPP FLUTUANTE --- */
+        .whatsapp-float {
+            position: fixed; 
+            width: 65px; 
+            height: 65px; 
+            bottom: 30px; 
+            right: 30px;
+            background-color: #25d366; 
+            color: #FFF; 
+            border-radius: 50px;
+            text-align: center; 
+            font-size: 35px; 
+            box-shadow: 2px 5px 15px rgba(0,0,0,0.3);
+            z-index: 1000; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            text-decoration: none; 
+            transition: 0.3s;
+        }
+        .whatsapp-float:hover { transform: scale(1.1); background-color: #128c7e; color: white; }
+
+               .container { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
+
+        .cab{
+            background-color: #444;
+            height: 100vh; /* Faz a seção ocupar a altura toda da tela */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            flex-direction: column;
+        }
+        /* --- CABEÇALHO DA MARCA --- */
+        .brand-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 50px; }
+        .brand-info { flex: 1; padding-right: 40px; }
+        
+        .line-orange { width: 40px; height: 3px; background: #2800da; margin-bottom: 15px; }
+        .brand-info h1 { font-size: 42px; color: #2c3e50; margin-bottom: 15px; }
+        .brand-info p { font-size: 16px; color: #666; margin-bottom: 20px; line-height: 1.6; }
+        .brand-info a { color: #004a99; text-decoration: none; font-weight: 600; }
+
+        .brand-logo-large img { max-width: 250px; }
+
+        /* --- GRADE DE PRODUTOS --- */
+        .time-title { font-size: 32px; color: #2c3e50; margin-bottom: 30px; }
+        
+        .time-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+            gap: 20px; 
+        }
+
+        .time-card {
+            background: #fff;
+            border: 1px solid #0300c9;
+            border-radius: 50px;
+            padding: 30px 20px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .time-card:hover { 
+            transform: translateY(-5px); 
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05); 
+        }
+
+        .time-card h3 { 
+            font-size: 16px; 
+            color: #2c3e50; 
+            margin-bottom: 30px; 
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .time-card img { 
+            max-width: 100%; 
+            height: 200px; 
+            object-fit: contain; 
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .brand-header { flex-direction: column; text-align: center; }
+            .brand-info { padding-right: 0; margin-bottom: 30px; }
+            .line-orange { margin: 0 auto 15px; }
+            .brand-logo-large { margin: 0 auto; }
+        }
+
+        .mvv {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    flex-wrap: wrap; /* Para quebrar linha no celular */
+    gap: 20px;
+    padding: 60px 5%;
+    background-color: #f8f9fa; /* Um cinza bem clarinho para destacar do branco */
+}
+
+/* Estilo de cada quadradinho (card) */
+.mvv-card {
+    flex: 1;
+    min-width: 280px; /* Largura mínima para não esmagar no celular */
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    border-top: 5px solid #16467d; /* Barrinha azul da cor da sua logo */
+}
+
+.mvv-card h3 {
+    color: #16467d;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.mvv-card p {
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Estilo da listinha de valores */
+.mvv-card ul {
+    list-style: none; /* Remove as bolinhas padrão */
+    padding: 0;
+}
+
+.mvv-card ul li {
+    background: #eef2f7;
+    margin: 5px 0;
+    padding: 5px;
+    border-radius: 5px;
+    color: #16467d;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* Ajuste para celular */
+@media (max-width: 768px) {
+    .mvv {
+        flex-direction: column;
+    }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="novare.jpg" alt="Logo">
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="time.html">EQUIPE</a></li>
+                <li><a href="quem.html">QUEM SOMOS NÓS</a></li>
+                <li><a href="servico.html">SERVIÇOS</a></li>
+
+                <div class="Social-header">
+                 <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                 <a href="https://www.instagram.com/novareconsultoria?igsh=MTNuOHc4a2wxeHc3dw=="><i class="fab fa-instagram"></i></a>
+                </div>
+            </ul>
+        </nav>
+    </header>
+    <a href="https://wa.me/5592992430940" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+       <div class="line-orange"></div>
+        <h2 class="time-title">Time Novare</h2>
+
+        <div class="time-grid">
+
+            <div class="time-card">
+                <h3>Graziela Pantoja</h3>
+                <img src="grazi.jpeg" alt="Grazi">
+                <h3>Presidente</h3>
+            </div>
+
+            <div class="time-card">
+                <h3>Victor Marques</h3>
+                <img src="vitinho.jpeg" alt="Vitinho">
+                <h3>Diretor de RH/Projetos</h3>
+            </div>
+
+            <div class="time-card">
+                <h3>Alice Silva</h3>
+                <img src="alice.jpeg" alt="Vitinho">
+                <h3>Diretora de Marketing</h3>
+            </div>
+
+            <div class="time-card">
+                <h3>Nicole Miranda</h3>
+                <img src="nicole.jpeg" alt="Vitinho">
+                <h3>Diretora de Comercial</h3>
+            </div>
+
+            <div class="time-card">
+                <h3>Jamile Jesus</h3>
+                <img src="jamile.jpeg" alt="Vitinho">
+                <h3>Diretora de Adm. Fin.</h3>
+            </div>
+
+                <div class="time-card">
+                <h3>Jamily Farias</h3>
+                <img src="jamily.jpeg" alt="Vitinho">
+                <h3>Trainee de Adm. Fin.</h3>
+            </div>
+
+            <div class="time-card">
+                <h3>Witallo de Barros</h3>
+                <img src="witallo.jpeg" alt="Vitinho">
+                <h3>Trainee de Adm. Fin.</h3>
+            </div>
+
+            <div class="time-card">
+                <h3>Nicole Bruck</h3>
+                <img src="bruck.jpeg" alt="Vitinho">
+                <h3>Trainee de RH</h3>
+            </div>
+
+                        
+            <div class="time-card">
+                <h3>Winicius Michel</h3>
+                <img src="wini.jpeg" alt="Vitinho">
+                <h3>Trainee de RH</h3>
+            </div>
+
+            <div class="time-card">
+                <h3>Giovanna Arruda</h3>
+                <img src="giovanna.jpeg" alt="Vitinho">
+                <h3>Trainee de Projetos</h3>
+                
+            </div>
+
+            <div class="time-card">
+                <h3>Ana Cláudia</h3>
+                <img src="claudia.jpeg" alt="Vitinho">
+                <h3>Trainee de Projetos</h3>
+            </div>
+
+            <div class="time-card">
+                <h3>Igor Hugo</h3>
+                <img src="igor.jpeg" alt="Vitinho">
+                <h3>Trainee de Comercial</h3>
+            </div>
+
+            <div class="time-card">
+                <h3>Hendryo Lopes</h3>
+                <img src="wendrio.jpeg" alt="Vitinho">
+                <h3>Trainee de Comercial</h3>
+            </div>
+
+            <div class="time-card">
+                <h3>Maria Fernanda</h3>
+                <img src="maria.jpeg" alt="Vitinho">
+                <h3>Trainee de Marketing</h3>
+            </div>
+
+            <div class="time-card">
+                <h3>Kaue Maciel</h3>
+                <img src="kaue.jpeg" alt="Vitinho">
+                <h3>Trainee de Marketing</h3>
+            </div>
+    </main>
+
+</div>
+</section>
+</body>
+</html>
