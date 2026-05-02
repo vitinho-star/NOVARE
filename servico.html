@@ -50,7 +50,61 @@
         }
         .whatsapp-float:hover { transform: scale(1.1); background-color: #128c7e; color: white; }
 
+ .processo {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  padding: 50px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
 
+/* A linha pontilhada ao fundo */
+.processo::before {
+  content: "";
+  position: absolute;
+  top: 85px; /* Ajuste conforme o tamanho do seu círculo */
+  left: 50px;
+  right: 50px;
+  height: 2px;
+  border-top: 3px dotted #004aad; /* Azul da sua marca */
+  z-index: 1;
+}
+
+.passo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  z-index: 2;
+  width: 150px;
+}
+
+.circulo {
+  width: 70px;
+  height: 70px;
+  background-color: #fff;
+  border: 5px solid #004aad;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+  font-size: 24px;
+  color: #333;
+}
+
+.passo p {
+  font-weight: bold;
+  font-family: sans-serif;
+  color: #000;
+  font-size: 14px;
+}
+
+.serv{
+    background-color: #b6b6b6;
+}
     </style>
 </head>
 <body>
@@ -67,7 +121,7 @@
                 <li><a href="servico.html">SERVIÇOS</a></li>
 
                 <div class="Social-header">
-                 <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                 <a href="https://www.linkedin.com/company/novareconsultoria/"><i class="fab fa-linkedin-in"></i></a>
                  <a href="https://www.instagram.com/novareconsultoria?igsh=MTNuOHc4a2wxeHc3dw=="><i class="fab fa-instagram"></i></a>
                  </div>
             </ul>
@@ -76,5 +130,39 @@
     <a href="https://wa.me/5592992430940" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
+<main>
+    <section class="processo">
+  <div class="linha-conector"></div>
+  
+  <div class="passo">
+    <div class="circulo"><i class="fas fa-handshake"></i></div>
+    <p>Primeiro contato</p>
+  </div>
+
+  <div class="passo">
+    <div class="circulo"><i class="fas fa-search"></i></div>
+    <p>Diagnóstico</p>
+  </div>
+
+  <div class="passo">
+    <div class="circulo"><i class="fas fa-file-contract"></i></div>
+    <p>Fechamento de Contrato</p>
+  </div>
+
+  <div class="passo">
+    <div class="circulo"><i class="fas fa-truck"></i></div>
+    <p>Entrega do Serviço</p>
+  </div>
+
+  <div class="passo">
+    <div class="circulo"><i class="fas fa-comments"></i></div>
+    <p>Feedback</p>
+  </div>
+</section>
+</main>
+<main class="serv">
+    <h1>Ferramenta 5S</h1>
+    <p>A ferramenta 5S </p>
+</main>
 </body>
 </html>
