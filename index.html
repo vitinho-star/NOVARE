@@ -176,6 +176,38 @@
         flex-direction: column;
     }
 }
+
+footer {
+    background-color: #004aad; /* O azul da Novare */
+    color: #ffffff;            /* Texto branco para contraste */
+    padding: 40px 20px;       /* Espaço interno */
+    text-align: center;       /* Centraliza o conteúdo */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;          /* Espaçamento entre as linhas */
+    border-top: 4px solid #003580; /* Uma borda sutil no topo */
+}
+
+footer p {
+    margin: 10px 0;           /* Espaço entre os parágrafos */
+    font-size: 14px;
+    opacity: 0.9;             /* Deixa o texto levemente mais suave */
+}
+
+/* Deixa o e-mail com destaque se for um link */
+footer p:last-child {
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+/* Ajuste para telas menores (celular) */
+@media (max-width: 600px) {
+    footer {
+        padding: 30px 10px;
+    }
+    footer p {
+        font-size: 13px;
+    }
+}
     </style>
 </head>
 <body>
@@ -231,5 +263,12 @@
         </ul>
     </div>
 </section>
+
+<footer>
+  <p>CNPJ: 29.089.099/0001-21</p>
+  <p>Endereço: AV Darcy Vargas, Parque 10 de Novembro, 1200 (Sala A9) - Manaus, AM </p>
+  <p>Email: <a href="mailto:novareconsultoriajunior@gmail.com" style="color: #fff; text-decoration: underline;">novareconsultoria@gmail.com</a></p>
+</footer>
+
 </body>
 </html>

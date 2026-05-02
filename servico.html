@@ -100,10 +100,133 @@
   font-family: sans-serif;
   color: #000;
   font-size: 14px;
+  text-align: justify
 }
 
 .serv{
     background-color: #b6b6b6;
+}
+
+.mvv {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    flex-wrap: wrap; /* Para quebrar linha no celular */
+    gap: 20px;
+    padding: 60px 5%;
+    background-color: #f8f9fa; /* Um cinza bem clarinho para destacar do branco */
+}
+
+/* Estilo de cada quadradinho (card) */
+.mvv-card {
+    flex: 1;
+    min-width: 280px; /* Largura mínima para não esmagar no celular */
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    border-top: 5px solid #16467d; /* Barrinha azul da cor da sua logo */
+}
+
+.mvv-card h3 {
+    color: #16467d;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.mvv-card p {
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Estilo da listinha de valores */
+.mvv-card ul {
+    list-style: none; /* Remove as bolinhas padrão */
+    padding: 0;
+}
+
+.mvv-card ul li {
+    background: #eef2f7;
+    margin: 5px 0;
+    padding: 5px;
+    border-radius: 5px;
+    color: #16467d;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* Ajuste para celular */
+@media (max-width: 768px) {
+    .mvv {
+        flex-direction: column;
+    }
+}
+
+/* MARCAS */
+
+.brands{
+padding:80px 8%;
+background:#f8f9fb;
+text-align:center;
+}
+
+.brands-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+gap:40px;
+align-items:center;
+margin-top:50px;
+}
+
+.brands-grid img{
+max-width:130px;
+opacity:.7;
+transition:.4s;
+filter:grayscale(1);
+}
+
+.brands-grid img:hover{
+opacity:1;
+transform:scale(1.1);
+filter:grayscale(0);
+}
+
+
+footer {
+    background-color: #004aad; /* O azul da Novare */
+    color: #ffffff;            /* Texto branco para contraste */
+    padding: 40px 20px;       /* Espaço interno */
+    text-align: center;       /* Centraliza o conteúdo */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;          /* Espaçamento entre as linhas */
+    border-top: 4px solid #003580; /* Uma borda sutil no topo */
+}
+
+footer p {
+    margin: 10px 0;           /* Espaço entre os parágrafos */
+    font-size: 14px;
+    opacity: 0.9;             /* Deixa o texto levemente mais suave */
+}
+
+/* Deixa o e-mail com destaque se for um link */
+footer p:last-child {
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+/* Ajuste para telas menores (celular) */
+@media (max-width: 600px) {
+    footer {
+        padding: 30px 10px;
+    }
+    footer p {
+        font-size: 13px;
+    }
 }
     </style>
 </head>
@@ -159,10 +282,98 @@
     <p>Feedback</p>
   </div>
 </section>
-</main>
-<main class="serv">
-    <h1>Ferramenta 5S</h1>
-    <p>A ferramenta 5S </p>
-</main>
+
+<section class="mvv">
+    <div class="mvv-card">
+        <h3><i class="fas fa-boxes"></i>Ferramenta 5S</h3>
+        <p>A ferramenta 5S teve origem no Japão e é uma ferramenta de organização. ransforme seu ambiente de trabalho com mais organização, produtividade e eficiência.</p>
+        <ul>
+          <li>Redução de Desperdício</li>
+          <li>Melhoria de processos</li>
+          <li>Mais disciplina e padronização</li>
+        </ul>
+
+        <p>Aplicamos o 5S de forma prática, garantindo resultados consistentes no dia a dia.</p>
+      </div>
+
+    <div class="mvv-card">
+        <h3><i class="fas fa-sitemap"></i>Mapeamento de Processos</h3>
+        <p>Tenha mais controle e clareza de como sua empreza funciona</p>
+        <ul>
+          <li>Identificação de gargalos</li>
+          <li>Padronização de atividades</li>
+          <li>Otimização de fluxos</li>
+        </ul>
+        <p>Mapeamos seus processos de forma prática, trazedo mais eficiência e melhores resultados para o dia a dia.</p>
+    </div>
+
+    <div class="mvv-card">
+        <h3><i class="fas fa-binoculars"></i> Planejamento Estratégico</h3>
+        <p>Defina o rumo certo e tome decisões com mais segurança</p>
+        <ul>
+          <li>Análise de cenário</li>
+          <li>Definição de metas e onjetivos</li>
+          <li>Plano de ações estruturado</li>
+        </ul>
+        <p>Construímos um planejamento claro e direcionado para impulsionar o crescimento do seu negócio</p>
+    </div>
+
+      <div class="mvv-card">
+        <h3><i class="fas fa-microscope"></i> Analise Mercadológica</h3>
+        <p>Entenda seu mercado e tome decisões mais estratégicas</p>
+        <ul>
+          <li>Estudo de concorrência</li>
+          <li>Identiificaçã de oportunidades</li>
+          <li>Plano de ações estruturado</li>
+          <p>Realizamos uma análise completa e direcionado para impulsionar sua empresa de forma mais competitiva</p>
+        </ul>
+        <p>Construímos um planejamento claro e direcionado para impulsionar o crescimento do seu negócio</p>
+    </div>
+
+    <div class="mvv-card">
+        <h3><i class="fas fa-file-invoice-dollar"></i> Plano de Negócios</h3>
+        <p>Esruture sua ideia e transforme em um negócio viável</p>
+        <ul>
+          <li>Análise de viabilidade</li>
+          <li>Estruturação financeira</li>
+          <li>Definição de modelo de negócio</li>
+        </ul>
+        <p>Desenvolvemos um plano completo para orientar decisões e impulsionar o crescimento com segurança</p>
+    </div>
+
+    <div class="mvv-card">
+        <h3><i class="fas fa-laptop-code"></i>Desenvolvimento de Sites</h3>
+        <p>Tenha presença digital e destaque sua empresa no mercado</p>
+        <ul>
+          <li>Layout moderno e responsivo</li>
+          <li>Experiência do usuário otimizada</li>
+          <li>Estrutura pronta para conversão</li>
+        </ul>
+        <p>Criamos sites profissionais que fortalecem sua marca e geram resultados</p>
+        
+      </div>
+</section>
+<section class="brands">
+
+<h2 style="color:#2c3e50;position:relative;display:inline-block;padding-top:15px;font-size:28px;">
+Alguns Clientes
+<span style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:40px;height:4px;background:#3200a7;"></span>
+</h2>
+
+<div class="brands-grid">
+
+<img src="solinox.jpg">
+<img src="paco.jpg">
+<img src="calcada.jpg">
+<img src="harman.jpg">
+<img src="md.jpg">
+</div>
+
+</section>
+<footer>
+  <p>CNPJ: 29.089.099/0001-21</p>
+  <p>Endereço: AV Darcy Vargas, Parque 10 de Novembro, 1200 (Sala A9) - Manaus, AM </p>
+  <p>Email: <a href="mailto:novareconsultoriajunior@gmail.com" style="color: #fff; text-decoration: underline;">novareconsultoria@gmail.com</a></p>
+</footer>
 </body>
 </html>
