@@ -238,6 +238,45 @@ footer p:last-child {
     width: 50px;
     height: 50px;
 }
+
+@media (max-width: 768px) {
+
+    /* HEADER */
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    nav ul li {
+        margin: 5px;
+    }
+
+    .social-header {
+        margin-top: 10px;
+    }
+
+    /* PROCESSO (pra não quebrar feio no celular) */
+    .processo {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .processo::before {
+        display: none; /* linha pontilhada some no celular */
+    }
+
+    /* CLIENTES lado a lado */
+    .brands-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
     </style>
 </head>
 <body>
