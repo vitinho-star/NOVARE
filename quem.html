@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <style>
-        /* --- ESTILOS GERAIS --- */
+     /* --- ESTILOS GERAIS --- */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Open Sans', sans-serif; color: #333; line-height: 1.6; background: #fdfdfd; }
+        body { font-family: 'Open Sans', sans-serif; color: #333; line-height: 1.6; }
 
         /* --- CABEÇALHO --- */
         header {
@@ -22,19 +22,33 @@
 
         nav ul { display: flex; list-style: none; align-items: center; }
         nav ul li { margin: 0 12px; }
-        nav ul li a { text-decoration: none; color: #444; font-size: 14px; transition: 0.3s; font-weight: 600; }
+        nav ul li a { text-decoration: none; color: #444; font-size: 14px; transition: 0.3s; }
         nav ul li a:hover { color: #3508ff; }
 
-        .Social-header { display: flex; gap: 15px; margin-left: 20px; }
-        .Social-header a { color: #333; font-size: 18px; }
+        .social-header { display: flex; gap: 15px; margin-left: 20px; }
+        .social-header a { color: #333; font-size: 18px; }
 
-        /* --- WHATSAPP --- */
+        /* --- WHATSAPP FLUTUANTE --- */
         .whatsapp-float {
-            position: fixed; width: 65px; height: 65px; bottom: 30px; right: 30px;
-            background-color: #25d366; color: #FFF; border-radius: 50px;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 35px; box-shadow: 2px 5px 15px rgba(0,0,0,0.3); z-index: 1000;
+            position: fixed; 
+            width: 65px; 
+            height: 65px; 
+            bottom: 30px; 
+            right: 30px;
+            background-color: #25d366; 
+            color: #FFF; 
+            border-radius: 50px;
+            text-align: center; 
+            font-size: 35px; 
+            box-shadow: 2px 5px 15px rgba(0,0,0,0.3);
+            z-index: 1000; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            text-decoration: none; 
+            transition: 0.3s;
         }
+        .whatsapp-float:hover { transform: scale(1.1); background-color: #128c7e; color: white; }
 
         /* --- SEÇÃO SOBRE --- */
         .sobre-novare { padding: 80px 8%; background: #f5f7fa; text-align: justify; }
