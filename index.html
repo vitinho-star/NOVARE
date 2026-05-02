@@ -59,44 +59,70 @@
         }
         .whatsapp-float:hover { transform: scale(1.1); background-color: #128c7e; color: white; }
 
-        /* --- SEÇÃO HERO (AQUI ESTAVA O ERRO) --- */
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            flex-direction: column;
-            
-            /* Ajuste de degradê e caminho da imagem */
-            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./time.jpeg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: scroll; /* Melhor para mobile */
-            
-            color: #ffffff; /* Texto branco para leitura sobre fundo escuro */
-            padding: 0 5%;
-        }
+.hero {
+    height: 100vh;
+    background: linear-gradient(135deg, #eef2ff, #fdfbff);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
 
-        .hero h1 { font-size: 3rem; margin-bottom: 10px; }
-        .hero p { font-size: 1.2rem; margin-bottom: 20px; }
+/* LINHA QUE "PUXA" */
+.magic-line {
+    position: absolute;
+    width: 0;
+    height: 4px;
+    background: #16467d;
+    top: 50%;
+    left: 0;
+    animation: drawLine 2s ease forwards;
+}
 
-        .btn-hero {
-            display: inline-block;
-            background-color: #0e47e2;
-            color: #ffffff;
-            padding: 15px 30px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
-            transition: 0.3s;
-        }
-        .btn-hero:hover {
-            background-color: #2f00ff;
-            transform: translateY(-3px);
-        }
+/* Animação da linha */
+@keyframes drawLine {
+    to {
+        width: 100%;
+    }
+}
 
+/* TÍTULO escondido inicialmente */
+.title {
+    font-size: 3rem;
+    color: #16467d;
+    overflow: hidden;
+}
+
+.title span {
+    display: inline-block;
+    transform: translateX(-100%);
+    animation: revealText 1.5s ease forwards;
+    animation-delay: 1.5s;
+}
+
+/* Texto sendo "puxado" */
+@keyframes revealText {
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* Subtítulo */
+.subtitle {
+    margin-top: 15px;
+    font-size: 1.2rem;
+    color: #555;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 2.5s;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
         /* --- MISSÃO, VISÃO E VALORES --- */
         .mvv {
             display: flex;
@@ -183,11 +209,15 @@
     </a>
 
     <main>
-        <section class="hero">
-            <h1>Novare Consultoria</h1>
-            <p>Lutando por um Amazonas mais empreendedor</p>
-            <a href="time.html" class="btn-hero">Conheça nosso Time</a>
-        </section>
+<section class="hero">
+    <div class="magic-line"></div>
+
+    <h1 class="title">
+        <span>Novare Consultoria</span>
+    </h1>
+
+    <p class="subtitle">Transformando ideias em resultados no Amazonas</p>
+</section>
 
         <section class="mvv">
             <div class="mvv-card">
